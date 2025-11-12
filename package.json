@@ -1,0 +1,74 @@
+{
+  "name": "@ccw-cfl/nextjs-login-app",
+  "version": "1.0.0",
+  "description": "A modern Next.js 15 application with TypeScript, Tailwind CSS, and shadcn/ui",
+  "author": "CCW-CFl Team",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "shadcn-ui",
+    "react",
+    "next-auth",
+    "authentication"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccw-cfl/exp3.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "dequal": "^2.0.3",
+    "lucide-react": "^0.441.0",
+    "next": "15.0.2",
+    "next-auth": "^4.24.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
+    "tailwind-merge": "^2.5.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "postcss": "^8",
+    "prettier": "^3.2.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
