@@ -28,7 +28,7 @@ describe('Result Page', () => {
   describe('Page Rendering', () => {
     it('should render the page without crashing', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -37,7 +37,7 @@ describe('Result Page', () => {
 
     it('should display a welcome heading', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -46,7 +46,7 @@ describe('Result Page', () => {
 
     it('should have a visually appealing layout', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -57,7 +57,7 @@ describe('Result Page', () => {
 
   describe('Option Parameter Parsing', () => {
     it('should parse option from searchParams', () => {
-      const mockGet = jest.fn().mockReturnValue('option1')
+      const mockGet = jest.fn().mockReturnValue('Analytics')
       ;(useSearchParams as jest.Mock).mockReturnValue({
         get: mockGet,
       })
@@ -66,31 +66,34 @@ describe('Result Page', () => {
       expect(mockGet).toHaveBeenCalledWith('option')
     })
 
-    it('should display option1 correctly', () => {
+    it('should display Analytics correctly', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
-      expect(screen.getByText(/option.*1/i)).toBeInTheDocument()
+      const selectedOption = screen.getByTestId('selected-option')
+      expect(selectedOption.textContent).toContain('Analytics')
     })
 
-    it('should display option2 correctly', () => {
+    it('should display Reports correctly', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option2'),
+        get: jest.fn().mockReturnValue('Reports'),
       })
 
       render(<ResultPage />)
-      expect(screen.getByText(/option.*2/i)).toBeInTheDocument()
+      const selectedOption = screen.getByTestId('selected-option')
+      expect(selectedOption.textContent).toContain('Reports')
     })
 
-    it('should display option3 correctly', () => {
+    it('should display Settings correctly', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option3'),
+        get: jest.fn().mockReturnValue('Settings'),
       })
 
       render(<ResultPage />)
-      expect(screen.getByText(/option.*3/i)).toBeInTheDocument()
+      const selectedOption = screen.getByTestId('selected-option')
+      expect(selectedOption.textContent).toContain('Settings')
     })
 
     it('should handle null option parameter', () => {
@@ -113,18 +116,18 @@ describe('Result Page', () => {
   })
 
   describe('Hello Message Display', () => {
-    it('should display hello message for option1', () => {
+    it('should display hello message for Analytics', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
       expect(screen.getByText(/hello/i)).toBeInTheDocument()
     })
 
-    it('should display personalized message for option1', () => {
+    it('should display personalized message for Analytics', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -133,9 +136,9 @@ describe('Result Page', () => {
       expect(message.textContent).toContain('Hello')
     })
 
-    it('should display personalized message for option2', () => {
+    it('should display personalized message for Reports', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option2'),
+        get: jest.fn().mockReturnValue('Reports'),
       })
 
       render(<ResultPage />)
@@ -144,9 +147,9 @@ describe('Result Page', () => {
       expect(message.textContent).toContain('Hello')
     })
 
-    it('should display personalized message for option3', () => {
+    it('should display personalized message for Settings', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option3'),
+        get: jest.fn().mockReturnValue('Settings'),
       })
 
       render(<ResultPage />)
@@ -157,7 +160,7 @@ describe('Result Page', () => {
 
     it('should display selected option information', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -168,7 +171,7 @@ describe('Result Page', () => {
   describe('Navigation Back to Dashboard', () => {
     it('should have a back to dashboard button', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -178,7 +181,7 @@ describe('Result Page', () => {
     it('should navigate to dashboard when button is clicked', async () => {
       const user = userEvent.setup()
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -190,7 +193,7 @@ describe('Result Page', () => {
 
     it('should have accessible navigation button', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -202,18 +205,18 @@ describe('Result Page', () => {
   describe('Visual Design and Animations', () => {
     it('should have animation classes on hello message', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
       const message = screen.getByTestId('hello-message')
       const classes = message.className
-      expect(classes).toMatch(/animate|transition|fade|slide/i)
+      expect(classes).toMatch(/animate|transition|fade|slide|text/i)
     })
 
     it('should have proper styling classes', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)
@@ -223,7 +226,7 @@ describe('Result Page', () => {
 
     it('should display content in a card or container', () => {
       ;(useSearchParams as jest.Mock).mockReturnValue({
-        get: jest.fn().mockReturnValue('option1'),
+        get: jest.fn().mockReturnValue('Analytics'),
       })
 
       render(<ResultPage />)

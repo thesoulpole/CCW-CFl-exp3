@@ -5,29 +5,53 @@ import { useEffect, useState } from 'react'
 
 // Option configurations with personalized messages
 const optionConfig = {
-  option1: {
-    title: 'Option 1',
-    message: 'Welcome to the Adventure Path!',
-    description: 'You\'ve chosen the path of exploration and discovery. Great choice!',
-    emoji: '🚀',
+  Analytics: {
+    title: 'Analytics',
+    message: 'Welcome to Analytics Dashboard!',
+    description: 'You\'ve chosen to explore your data insights and analytics. Great choice!',
+    emoji: '📊',
     color: 'from-blue-500 to-purple-600',
     bgColor: 'bg-blue-50',
   },
-  option2: {
-    title: 'Option 2',
-    message: 'Welcome to the Creative Journey!',
-    description: 'You\'ve selected the artistic and innovative route. Excellent selection!',
-    emoji: '🎨',
+  Reports: {
+    title: 'Reports',
+    message: 'Welcome to Reports Center!',
+    description: 'You\'ve selected the reporting hub. Generate comprehensive insights!',
+    emoji: '📈',
     color: 'from-pink-500 to-orange-500',
     bgColor: 'bg-pink-50',
   },
-  option3: {
-    title: 'Option 3',
-    message: 'Welcome to the Tech Excellence!',
-    description: 'You\'ve picked the technical mastery pathway. Fantastic decision!',
-    emoji: '💻',
+  Settings: {
+    title: 'Settings',
+    message: 'Welcome to Settings!',
+    description: 'You\'re now in configuration mode. Customize your experience!',
+    emoji: '⚙️',
     color: 'from-green-500 to-teal-600',
     bgColor: 'bg-green-50',
+  },
+  Users: {
+    title: 'Users',
+    message: 'Welcome to User Management!',
+    description: 'You\'ve accessed the user administration panel. Manage with care!',
+    emoji: '👥',
+    color: 'from-indigo-500 to-blue-600',
+    bgColor: 'bg-indigo-50',
+  },
+  Projects: {
+    title: 'Projects',
+    message: 'Welcome to Projects!',
+    description: 'You\'ve entered the project management center. Build amazing things!',
+    emoji: '📁',
+    color: 'from-yellow-500 to-orange-600',
+    bgColor: 'bg-yellow-50',
+  },
+  Help: {
+    title: 'Help',
+    message: 'Welcome to Help Center!',
+    description: 'You\'ve found the support hub. We\'re here to assist you!',
+    emoji: '❓',
+    color: 'from-purple-500 to-pink-600',
+    bgColor: 'bg-purple-50',
   },
 }
 
